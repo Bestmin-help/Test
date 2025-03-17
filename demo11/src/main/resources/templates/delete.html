@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>도서 삭제</title>
+</head>
+<body>
+<h3>도서 삭제</h3>
+<a th:href="@{/}">메인</a>
+<a th:href="@{/pedro}">목록</a>
+
+<form th:action="@{/pedro/delete}" method="post">
+    <table border="1">
+        <tr>
+            <td>넘버링</td>
+            <td>
+                <label>
+                    <input type="text" name="bookid" th:value="${book.bookid}" readonly="readonly">
+                </label>
+            </td>
+
+            <td>이름</td>
+            <td>
+                <label>
+                    <input type="text" name="bookname" th:value="${book.bookname}" readonly="readonly">
+                </label>
+            </td>
+
+            <td>저자</td>
+            <td>
+                <label>
+                    <input type="text" name="publisher" th:value="${book.publisher}" readonly="readonly">
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td>가격</td>
+            <td>
+                <label>
+                    <input type="number" name="price" th:value="${book.price}" readonly="readonly">
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="right">
+                <p>삭제할거임?</p>
+                <input type="submit" value="ㅇㅇ">
+                <a th:href="@{/pedro}">
+                    <button type="button">ㄴㄴ</button>
+                </a>
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
