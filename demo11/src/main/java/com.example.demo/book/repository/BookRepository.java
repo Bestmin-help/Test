@@ -5,10 +5,13 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface BookRepository extends JpaRepository<Book,Long> {
-    void registerBook(Book book);
+public interface BookRepository extends JpaRepository<Book, Long> {
 
-    void modifyBook(Book book);
-
-    void deleteBook(Book book);
+    //    void registerBook(Book book);
+//
+//    void modifyBook(Book book);
+//
+//    void deleteBook(Book book);
+//
+//    Book save(Book book) ;
 }

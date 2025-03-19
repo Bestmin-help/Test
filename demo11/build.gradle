@@ -40,6 +40,34 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-validation'
 }
 
+dependencies {
+    testImplementation 'org.mockito:mockito-core:5.10.0' // 최신 버전으로 변경
+    testImplementation 'org.mockito:mockito-junit-jupiter:5.10.0' // JUnit 5를 사용하는 경우
+}
+dependencies {
+    implementation 'javax.servlet:javax.servlet-api:4.0.1'
+    implementation 'javax.persistence:javax.persistence-api:2.2'
+    implementation 'javax.ejb:javax.ejb-api:3.2'
+}
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+}
+
+
+
+
+
 tasks.named('test') {
     useJUnitPlatform()
+}
+
+tasks.withType(JavaCompile) {
+    options.compilerArgs << "-Xlint:deprecation"
+}
+
+test {
+    jvmArgs = [
+            "-javaagent:${configurations.testRuntimeClasspath.find { it.name.contains('byte-buddy-agent') }.absolutePath}"
+    ]
 }

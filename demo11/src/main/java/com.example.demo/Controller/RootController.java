@@ -11,7 +11,7 @@ public class RootController {
     public String test(Model model){
 
             model.addAttribute("드디어완성했다씨벌","쳐눌러봐");
-            return "/hello";
+            return "/pedro";
         }
 
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="">
+<html xmlns:th="http://www.thymeleaf.org"  lang="">
 <head>
     <title>Book List</title>
 </head>
@@ -32,12 +32,14 @@
         <td th:text="${book.publisher}"></td>  <!-- publisher 출력 -->
         <td th:text="${book.price}"></td>  <!-- price 출력 -->
                 <td>
-                    <a th:href="@{/pedro/register(bookid = ${book.bookid})}">등록</a>
+                    <a th:href="@{/pedro/register}">등록</a>
                     <a th:href="@{/pedro/modify(bookid = ${book.bookid})}">수정</a>
                     <a th:href="@{/pedro/delete(bookid = ${book.bookid})}">삭제</a>
+                </td>
             </tr>
         </tbody>
     </table>
+
 
 </body>
 </html>
