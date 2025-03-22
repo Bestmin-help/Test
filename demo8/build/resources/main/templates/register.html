@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"  lang="">
+<head>
+    <meta charset="UTF-8">
+    <title>새로운 책 등록</title>
+</head>
+<body>
+<h3> 등록</h3>
+<a th:href="@{/}"> 메인 </a>
+<a th:href="@{/book}"> 목록 </a>
+
+<form th:action="@{/book/register}" th:object="${book}" method="post">
+    <table border="1">
+        <tr>
+            <td>이름</td>
+            <td><label>
+                <input type="text" name="bookname">
+            </label></td>
+        </tr>
+        <tr>
+            <td>저자</td>
+            <td><label>
+                <input type="text" name="publisher">
+            </label></td>
+        </tr>
+        <tr>
+            <td>가격</td>
+            <td><label>
+                <input type="number" name="price">
+            </label></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="right"><input type="submit" value="등록"></td>
+
+        </tr>
+    </table>
+</form>
+</body>
+</html>

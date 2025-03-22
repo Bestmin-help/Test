@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>book::modify</title>
+</head>
+<body>
+<h3>수정</h3>
+<a th:href="@{/}"> 메인</a>
+<a th:href="@{/book}"> 목록</a>
+
+<form th:action="@{/book/modify/{bookid}(bookid=${book.bookid})}" method="post">
+    <table border="1">
+        <tr>
+            <td>이름</td>
+            <td><label>
+                <input type="text" name="bookname" th:value="${book.bookname}" >
+            </label></td>
+        </tr>
+        <tr>
+            <td>저자</td>
+            <td><label>
+                <input type="text" name="publisher" th:value="${book.publisher}" >
+            </label></td>
+        </tr>
+        <tr>
+            <td>가격</td>
+            <td><label>
+                <input type="number" name="price" th:value="${book.price}" >
+            </label></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="right"><input type="submit" value="수정"></td>
+
+        </tr>
+    </table>
+</form>
+
+</body>
+</html>
