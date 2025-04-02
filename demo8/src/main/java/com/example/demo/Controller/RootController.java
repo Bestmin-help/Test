@@ -12,6 +12,6 @@ public class RootController {
     public String test(Model model) {
 
         model.addAttribute("테스트를 시작하지", "눌러보거라");
-        return "/hello";
+        return "login";
     }
 }
